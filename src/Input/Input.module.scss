@@ -1,0 +1,68 @@
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    cursor: pointer; 
+}
+
+.field {
+    display: flex;
+    flex-direction: column-reverse;
+    transition: border-color 0.2s;
+    height: 2.5rem;
+    border: 1px solid;
+    max-height: 100%;
+
+}
+.input {
+    margin: 0.2rem;
+    display: flex;
+    border: none;
+
+    &:focus {
+        outline: transparent;
+    }
+
+    &::placeholder {
+        color: gray;
+        transition: inherit;
+        opacity: 0;
+    }
+
+    &:placeholder-shown + .label {
+        font-size: 1rem;
+        transform: translate(0.2rem, 0.8rem);
+        cursor: pointer;
+    }
+
+    &:focus::placeholder {
+        opacity: 1;
+    }
+
+    &:not(:placeholder-shown) + .label,
+    &:focus + .label {
+        transform: translate(0.2rem, 0);
+        font-size: 0.6rem;
+    }
+}
+
+
+.label, .input {
+    transition: all 0.3s;
+    touch-action: manipulation;
+    width: 80%;
+    
+}
+//VARIANTS
+
+.flat {
+    border-radius: 0;
+}
+
+.rounded {
+    border-radius: 0.5rem;
+}
+
+.pill {
+    border-radius: 63rem;
+}
+

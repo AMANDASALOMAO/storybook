@@ -1,0 +1,32 @@
+.divider {
+    position: relative;
+    background-color: black;
+    width: 100%;
+    height: 1px;
+    display: flex;
+    align-items: center;
+  
+    &.vertical {
+      transform: rotate(90deg);
+    }
+    &.center {
+      justify-content: center;
+    }
+    &.right {
+      justify-content: flex-end;
+    }
+    &.left {
+      justify-content: flex-start;
+    }
+  }
+  
+  
+.divider::before {
+    content: '';
+    
+  }
+  
+  .divider > span {
+    position: relative;
+    background-color: white;
+}

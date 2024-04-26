@@ -1,0 +1,11 @@
+.alert {
+    width: 100%;
+    height: min-content;
+    align-items: center;
+
+    &.success {
+        background-color: rgb(229, 246, 253);
+        color: rgb(1, 67, 97);
+        padding: 1rem;
+    }
+}

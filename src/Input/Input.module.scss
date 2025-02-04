@@ -14,9 +14,10 @@
 
 }
 .input {
-    margin: 0.2rem;
+    margin-top: 0.2rem;
     display: flex;
     border: none;
+    align-items: center;
 
     &:focus {
         outline: transparent;
@@ -52,17 +53,24 @@
     width: 80%;
     
 }
+
 //VARIANTS
 
 .flat {
-    border-radius: 0;
+    border-radius: 0;  
+    display: flex;
+    align-items: center;
 }
 
 .rounded {
     border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .pill {
     border-radius: 63rem;
+    display: flex;
+    align-items: center;
 }
 

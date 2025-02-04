@@ -24,7 +24,7 @@ export const Rounded: StoryObj<typeof Input> = {
 }
 
 const config: Meta<typeof Input> = {
-    title: 'Input',
+    title: 'components/Input',
     component: Input,
     tags: ['autodocs'],
     args: {

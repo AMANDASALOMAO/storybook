@@ -3,19 +3,22 @@ import { Button } from './Button';
 import { action } from '@storybook/addon-actions';
 
 const meta = {
-  title: 'Button',
+  title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
   args: {
     label: 'Click me',
-    onClick: action('onClick')
+    onClick: action('onClick'),
   },
   argTypes: {
+    type: { control: 'select', options: ['primary', 'secondary'] },
+    size: { control: 'select', options: ['small', 'medium', 'large'] },
+    variant: { control: 'select', options: ['flat', 'rounded', 'pill'] },
     backgroundColor: { control: 'color' },
     borderColor: { control: 'color' },
     color: { control: 'color' },
-    variant: { control: 'select', options: ['flat, rounded, pill']},
-    label: {control: 'text'}
+    label: { control: 'text' },
+    disabled: { control: 'boolean' },
   },
 } satisfies Meta<typeof Button>;
 
@@ -24,41 +27,49 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    type: 'primary'
+    type: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    type: 'secundary'
+    type: 'secondary',
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large'
+    size: 'large',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small'
+    size: 'small',
   },
 };
+
 export const Flat: Story = {
   args: {
-      variant: 'flat'
-  }
-}
+    variant: 'flat',
+  },
+};
 
 export const Pill: Story = {
   args: {
-      variant: 'pill'
-  }
-}
+    variant: 'pill',
+  },
+};
 
 export const Rounded: Story = {
   args: {
-      variant: 'rounded'
-  }
-}
+    variant: 'rounded',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    label: 'Disabled Button',
+  },
+};

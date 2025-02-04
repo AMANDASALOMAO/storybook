@@ -3,16 +3,16 @@ import React from 'react';
 import styles from './Button.module.scss';
 
 interface ButtonProps {
-  type?: 'primary' | 'secundary'
+  type?: 'primary' | 'secondary';
   backgroundColor?: string;
   borderColor?: string;
   color?: string;
-  variant?: 'flat' | 'rounded' | 'pill'
+  variant?: 'flat' | 'rounded' | 'pill';
   size?: 'small' | 'medium' | 'large';
   label: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
-const cx = classNames.bind(styles)
 
 export const Button = ({
   type = 'primary',
@@ -22,13 +22,15 @@ export const Button = ({
   borderColor,
   color,
   label,
+  disabled,
   ...props
 }: ButtonProps) => {
   return (
     <button
       type="button"
-      className={cx(styles.button, styles[size], styles[size], styles[type], styles[variant]) }
+      className={classNames(styles.button, styles[size], styles[type], styles[variant])}
       style={{ backgroundColor, borderColor, color }}
+      disabled={disabled}
       {...props}
     >
       {label}
